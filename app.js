@@ -196,7 +196,7 @@ let products = [
         title: 'Kampot Black Pepper (Organic 250g)',
         category: 'Cambodian Local',
         priceUSD: 6.50,
-        image: 'https://github.com/QuickBuy175/QB1/blob/099f20ef93c0a18eb01e7936a0770805a3aa6b18/photo_2026-07-29_18-07-52.jpg?auto=format&fit=crop&w=600&q=80',
+        image: 'https://github.com/QuickBuy175/QB1/blob/97ebca442c508353f9ef41fa1042fb2bd80d8282/photo1.jpg?auto=format&fit=crop&w=600&q=80',
         description: 'World-renowned GI certified Kampot Organic Pepper harvested from farms in Kampot, Cambodia. Rich aroma and exquisite spiciness.',
         rating: 4.9
     },
