@@ -1,3 +1,3 @@
 # QB1
 
-![image alt](https://github.com/QuickBuy175/QB1/blob/1d683a96b6b034ddd355ffe2cda6089554ef0780/20261008-laundry%20cherry%E2%80%8B%E2%80%8B%201.png)
+![image alt](https://github.com/QuickBuy175/QB1/blob/099f20ef93c0a18eb01e7936a0770805a3aa6b18/photo_2026-07-29_18-07-52.jpg)
