@@ -3,700 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angkor Express | Premium Online Shopping Cambodia</title>
-    <!-- Tailwind CSS -->
+    <title>QuickBuy.Kh | Express Shopping Cambodia</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter & Kantumruy Pro -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS File -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Google Fonts for English & Khmer -->
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            900: '#134e4a',
-                        },
-                        khqr: '#005f73',
-                        aba: '#003366',
-                        wing: '#8db600',
-                        acleda: '#002e5b'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'Kantumruy Pro', 'sans-serif'],
-                        khmer: ['Kantumruy Pro', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen relative">
 
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <!-- Top Announcement Bar -->
-        <div class="bg-slate-900 text-white text-xs py-1.5 px-4 text-center flex justify-between items-center max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex items-center space-x-2">
-                <span class="bg-emerald-500 text-slate-950 font-bold px-1.5 py-0.5 rounded text-[10px] uppercase" id="badge-free-del">Free Delivery</span>
-                <span id="announcement-text" class="hidden sm:inline">Fast Express Shipping across Phnom Penh & all Cambodian Provinces!</span>
-                <span class="sm:hidden" id="announcement-text-mobile">Express Delivery Across Cambodia!</span>
-            </div>
-            
-            <!-- Language and Currency Toggles -->
-            <div class="flex items-center space-x-3">
-                <button id="lang-toggle" onclick="toggleLanguage()" class="flex items-center space-x-1 text-xs font-semibold bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded border border-slate-700 transition" title="Switch Language">
-                    <span id="lang-en" class="text-emerald-400 font-bold">EN</span>
-                    <span class="text-slate-500">/</span>
-                    <span id="lang-km" class="text-slate-400 font-medium">🇰🇭 ខ្មែរ</span>
-                </button>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
 
-                <button id="currency-toggle" onclick="toggleCurrency()" class="flex items-center space-x-1 text-xs font-semibold bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded border border-slate-700 transition" title="Switch Currency">
-                    <span id="curr-usd" class="text-emerald-400 font-bold">$ USD</span>
-                    <span class="text-slate-500">/</span>
-                    <span id="curr-khr" class="text-slate-400">៛ KHR</span>
-                </button>
-            </div>
+    <div class="bg-indigo-900 text-white text-xs py-2 px-4 flex justify-between items-center font-medium shadow-inner">
+        <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-truck-fast text-amber-400"></i>
+            <span id="txt-top-announcement">Fast Delivery across Phnom Penh & Provinces | Express Payment via Bakong KHQR</span>
         </div>
+        <div class="flex items-center space-x-3">
+            <button onclick="toggleLanguage()" class="hover:text-amber-400 transition flex items-center space-x-1.5 bg-indigo-800/60 px-2 py-1 rounded border border-indigo-700">
+                <i class="fa-solid fa-globe text-amber-400"></i>
+                <span id="lang-btn-label" class="font-bold">ខ្មែរ</span>
+            </button>
+            <button onclick="toggleCurrency()" class="hover:text-amber-400 transition font-bold bg-indigo-800 px-2 py-1 rounded border border-indigo-700 flex items-center space-x-1">
+                <i class="fa-solid fa-coins text-amber-400 text-[10px]"></i>
+                <span id="curr-btn-label">$ USD</span>
+            </button>
+        </div>
+    </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
-            <!-- Brand Logo -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="showTab('shop')">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
-                    <i class="fa-solid font-bold fa-bag-shopping"></i>
+    <header class="sticky top-0 z-30 glass-nav border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="showView('store')">
+                <div class="w-10 h-10 bg-gradient-to-tr from-indigo-700 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-md shadow-indigo-200 group-hover:scale-105 transition transform">
+                    A
                 </div>
                 <div>
-                    <h1 id="brand-name" class="text-xl font-bold tracking-tight text-slate-900 leading-none">Angkor<span class="text-brand-600">Store</span></h1>
-                    <p id="brand-tagline" class="text-[10px] text-slate-500 font-medium">Cambodia's Trusted Marketplace</p>
+                    <h1 class="text-xl font-bold tracking-tight text-gray-900 leading-none">Angkor<span class="text-indigo-600">Store</span></h1>
+                    <p class="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-0.5" id="store-tagline">Express Shopping Cambodia</p>
                 </div>
             </div>
 
-            <!-- Search Bar (Desktop) -->
             <div class="flex-1 max-w-md hidden md:block">
                 <div class="relative">
-                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search phones, fashion, snacks, local crafts..." 
-                        class="w-full pl-10 pr-4 py-2 text-sm bg-slate-100 border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-slate-400 text-sm"></i>
+                    <input type="text" id="search-input" onkeyup="handleSearchInput(event)" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 text-sm bg-gray-100 border border-transparent rounded-full focus:bg-white focus:border-indigo-500 focus:outline-none transition shadow-inner">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gray-400 text-sm"></i>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="flex items-center space-x-2 sm:space-x-4">
-                <button onclick="toggleChatModal()" class="relative p-2 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-full transition" title="Messages with Seller">
-                    <i class="fa-regular fa-comments text-xl"></i>
-                    <span id="chat-badge" class="hidden absolute top-0 right-0 w-2.5 h-2.5 bg-rose-500 rounded-full ring-2 ring-white"></span>
+            <div class="flex items-center space-x-3">
+                <button onclick="showView('orders')" class="p-2 text-gray-600 hover:text-indigo-600 relative transition flex items-center space-x-1 font-semibold text-xs" title="My Orders">
+                    <i class="fa-solid fa-receipt text-lg"></i>
+                    <span id="txt-nav-orders" class="hidden sm:inline">Orders</span>
                 </button>
-
-                <button onclick="showTab('orders')" class="p-2 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-full transition relative" title="My Orders">
-                    <i class="fa-regular fa-rectangle-list text-xl"></i>
+                <button onclick="toggleCartDrawer(true)" class="p-2 text-gray-600 hover:text-indigo-600 relative transition" title="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
                 </button>
-
-                <button onclick="toggleCartDrawer()" class="relative flex items-center bg-brand-50 hover:bg-brand-100 text-brand-700 font-medium px-3.5 py-2 rounded-full transition">
-                    <i class="fa-solid fa-cart-shopping text-lg mr-2"></i>
-                    <span id="lbl-cart-btn" class="text-sm font-semibold hidden sm:inline">Cart</span>
-                    <span id="cart-count" class="ml-1.5 bg-brand-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
-                </button>
-
-                <button id="user-btn" onclick="toggleAuthModal()" class="flex items-center space-x-2 border border-amber-300 bg-amber-50/80 rounded-full p-1 sm:px-3 sm:py-1.5 hover:bg-amber-100 transition shadow-sm">
-                    <div id="user-avatar" class="w-7 h-7 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-bold">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <div class="text-left hidden sm:block">
-                        <span id="user-name" class="text-xs font-bold text-slate-800 block leading-tight">Owner Portal</span>
-                        <span id="user-role-badge" class="text-[9px] text-amber-700 font-semibold block leading-none">Admin Access</span>
-                    </div>
-                </button>
-
-                <button id="logout-btn" onclick="handleLogout()" class="hidden bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 p-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs font-bold transition flex items-center space-x-1.5 shadow-sm" title="Log Out Admin">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span id="lbl-logout" class="hidden sm:inline">Log Out</span>
+                <button onclick="openAdminModal()" class="px-3 py-1.5 text-xs font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg border border-indigo-200 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-user-shield text-indigo-600"></i>
+                    <span id="txt-nav-admin">Admin Portal</span>
                 </button>
             </div>
         </div>
 
-        <!-- Search Bar (Mobile) -->
         <div class="px-4 pb-3 md:hidden">
             <div class="relative">
-                <input type="text" id="mobile-search-input" onkeyup="handleSearch('mobile')" placeholder="Search products..." 
-                    class="w-full pl-9 pr-4 py-2 text-sm bg-slate-100 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input-mobile" onkeyup="syncMobileSearch(event)" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 text-sm bg-gray-100 border border-transparent rounded-full focus:bg-white focus:border-indigo-500 focus:outline-none transition">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gray-400 text-sm"></i>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <!-- SHOP TAB CONTENT -->
-        <div id="tab-shop" class="space-y-8">
-            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-r from-slate-900 via-brand-900 to-slate-900 text-white p-6 sm:p-10 shadow-lg">
-                <div class="relative z-10 max-w-xl">
-                    <span class="inline-block px-3 py-1 bg-brand-500/30 text-brand-300 border border-brand-500/40 text-xs font-semibold rounded-full mb-3" id="hero-badge">
-                        <i class="fa-solid fa-bolt mr-1"></i> Special Express Delivery
-                    </span>
-                    <h2 id="hero-title" class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2">Shop Local & Global Tech Products</h2>
-                    <p id="hero-desc" class="text-slate-300 text-sm sm:text-base mb-6">Pay seamlessly with ABA PAY, Bakong KHQR, Wing, ACLEDA, or order directly via Telegram and Messenger!</p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#product-grid" id="btn-explore" class="bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition text-sm flex items-center">
-                            Explore Products <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                        </a>
-                        <button onclick="openKHQRInfoModal()" id="btn-khqr-guide" class="bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2.5 rounded-xl border border-slate-700 text-sm flex items-center">
-                            <i class="fa-solid fa-qrcode text-emerald-400 mr-2"></i> KHQR Payment Guide
-                        </button>
-                    </div>
-                </div>
+    <main id="view-store" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div id="banner-container" class="w-full bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-800 rounded-2xl p-6 sm:p-8 text-white mb-8 shadow-xl relative overflow-hidden flex flex-col sm:flex-row items-center justify-between">
+            <div class="z-10 max-w-xl text-center sm:text-left mb-4 sm:mb-0">
+                <span class="inline-block px-3 py-1 bg-amber-400 text-indigo-950 font-black rounded-full text-xs tracking-wide uppercase mb-3 backdrop-blur-sm shadow-sm" id="banner-tag">Special Offer</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2" id="banner-title">Welcome to AngkorStore Express!</h2>
+                <p class="text-sm text-indigo-100 leading-relaxed" id="banner-desc">Discover authentic Cambodian products & trending electronics delivered directly to your door in Phnom Penh and all 25 provinces.</p>
             </div>
-
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider" id="lbl-categories-title">Categories</span>
-                    <button id="manage-cats-btn" onclick="openCategoryManageModal()" class="hidden text-xs font-bold text-emerald-600 hover:text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1 rounded-lg border border-emerald-200 transition flex items-center space-x-1">
-                        <i class="fa-solid fa-tags"></i>
-                        <span id="lbl-manage-cats">Manage Categories</span>
-                    </button>
-                </div>
-
-                <div id="category-filter-bar" class="flex items-center space-x-2 overflow-x-auto pb-2 custom-scrollbar"></div>
+            <div class="z-10 flex-shrink-0">
+                <button onclick="scrollToProducts()" class="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-indigo-950 text-sm font-bold rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <span id="txt-shop-now">Shop Now</span> 
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -left-10 -top-10 w-48 h-48 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none"></div>
+        </div>
 
+        <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-gray-900 flex items-center space-x-2">
+                <i class="fa-solid fa-layer-group text-indigo-600"></i>
+                <span id="txt-categories">Categories</span>
+            </h3>
+        </div>
+        <div id="category-bar" class="flex space-x-2 overflow-x-auto pb-4 mb-6 scrollbar-none"></div>
+
+        <div class="flex items-center justify-between mb-4" id="products-heading">
+            <h3 class="text-lg font-bold text-gray-900 flex items-center space-x-2">
+                <i class="fa-solid fa-store text-indigo-600"></i>
+                <span id="txt-products-header">All Products</span>
+            </h3>
+            <span id="product-count-badge" class="text-xs bg-gray-200 text-gray-700 font-bold px-2.5 py-1 rounded-full">0 products</span>
+        </div>
+        
+        <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"></div>
+    </main>
+
+    <main id="view-orders" class="hidden flex-grow max-w-4xl w-full mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
             <div>
-                <div class="flex justify-between items-center mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-900" id="catalog-title">Featured Products</h3>
-                        <span id="product-count" class="text-xs text-slate-500 font-medium">Showing all products</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <button id="edit-store-btn" onclick="openStoreSettingsModal()" class="hidden bg-slate-800 hover:bg-slate-900 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center shadow-md">
-                            <i class="fa-solid fa-gear mr-1.5"></i> <span id="lbl-btn-edit-store">Edit Store Info</span>
-                        </button>
-                        <button id="add-product-btn" onclick="openAddProductModal()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center shadow-md">
-                            <i class="fa-solid fa-plus mr-1.5"></i> <span id="lbl-btn-add-prod">Add New Product</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"></div>
+                <h2 class="text-2xl font-bold text-gray-900" id="txt-orders-title">My Order History</h2>
+                <p class="text-sm text-gray-500" id="txt-orders-sub">Track your active and previous store purchases</p>
+            </div>
+            <button onclick="showView('store')" class="px-4 py-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-100 rounded-lg text-sm font-semibold flex items-center space-x-2 transition">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span id="txt-back-store">Back to Shop</span>
+            </button>
+        </div>
+        <div id="orders-list-container" class="space-y-4"></div>
+    </main>
+
+    <main id="view-admin" class="hidden flex-grow max-w-6xl w-full mx-auto px-4 py-8">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-4 border-b border-gray-200 gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center space-x-2">
+                    <i class="fa-solid fa-sliders text-indigo-600"></i>
+                    <span>Store Management Portal</span>
+                </h2>
+                <p class="text-sm text-gray-500">Add products, edit shop details, upload images & adjust categories</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="showView('store')" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-xs font-semibold rounded-lg transition">Exit Admin View</button>
+                <button onclick="logoutAdmin()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold rounded-lg transition shadow-sm">Logout</button>
             </div>
         </div>
 
-        <!-- ORDERS TAB CONTENT -->
-        <div id="tab-orders" class="hidden space-y-6">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-4">
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900" id="lbl-orders-header">My Orders & Tracking</h2>
-                    <p class="text-sm text-slate-500" id="lbl-orders-sub">Track delivery status and view KHQR payment slips.</p>
-                </div>
-                <button onclick="showTab('shop')" class="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-1"></i> <span id="lbl-back-shop">Back to Shop</span>
+        <div class="flex border-b border-gray-200 mb-6 space-x-4">
+            <button id="tab-btn-products" onclick="switchAdminTab('products')" class="py-2.5 px-4 text-sm font-bold border-b-2 border-indigo-600 text-indigo-600 transition">Products</button>
+            <button id="tab-btn-categories" onclick="switchAdminTab('categories')" class="py-2.5 px-4 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition">Categories</button>
+            <button id="tab-btn-settings" onclick="switchAdminTab('settings')" class="py-2.5 px-4 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition">Store Settings</button>
+        </div>
+
+        <div id="admin-tab-products" class="space-y-6">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-bold text-gray-800">Product List</h3>
+                <button onclick="openProductFormModal()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Add New Product</span>
                 </button>
             </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead class="bg-gray-50 text-gray-600 uppercase text-[11px] font-bold tracking-wider">
+                            <tr>
+                                <th class="p-4">Product</th>
+                                <th class="p-4">Category</th>
+                                <th class="p-4">Price ($)</th>
+                                <th class="p-4">Price (KHR)</th>
+                                <th class="p-4 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-products-table" class="divide-y divide-gray-100"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-            <div id="orders-list" class="space-y-4"></div>
+        <div id="admin-tab-categories" class="hidden space-y-6 max-w-2xl">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-4">
+                <h3 class="text-lg font-bold text-gray-800">Manage Categories</h3>
+                <div class="flex gap-2">
+                    <input type="text" id="new-category-name" placeholder="New Category Name..." class="flex-1 px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    <button onclick="addNewCategory()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition">Add</button>
+                </div>
+                <div id="admin-category-list" class="space-y-2 pt-2"></div>
+            </div>
+        </div>
+
+        <div id="admin-tab-settings" class="hidden space-y-6 max-w-2xl">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-4">
+                <h3 class="text-lg font-bold text-gray-800">Store & Payment Credentials</h3>
+                <form id="settings-form" onsubmit="saveStoreSettings(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Store Name</label>
+                        <input type="text" id="setting-store-name" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Telegram Username (e.g. Loka175)</label>
+                        <input type="text" id="setting-telegram" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Messenger Username / Page Link</label>
+                        <input type="text" id="setting-messenger" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">ABA Bank Account Name / Number</label>
+                        <input type="text" id="setting-aba" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Bakong KHQR Phone / ID</label>
+                        <input type="text" id="setting-bakong" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Exchange Rate (1 USD = X KHR)</label>
+                        <input type="number" id="setting-exchange-rate" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <button type="submit" class="px-5 py-2.5 bg-indigo-600 text-white text-xs font-bold rounded-lg hover:bg-indigo-700 transition shadow-sm">Save Store Settings</button>
+                </form>
+            </div>
         </div>
     </main>
 
-    <!-- CHAT WITH SELLER DRAWER -->
-    <div id="chat-modal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-end sm:items-center justify-end p-0 sm:p-6">
-        <div class="bg-white w-full sm:w-96 h-[85vh] sm:h-[600px] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden">
-            <div id="chat-header-bg" class="bg-slate-900 text-white p-4 flex items-center justify-between border-b border-slate-800">
-                <div class="flex items-center space-x-3">
-                    <div class="relative">
-                        <div id="chat-avatar-icon" class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center font-bold text-slate-950">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <span class="w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full absolute bottom-0 right-0"></span>
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCartDrawer(false)"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-xl flex flex-col justify-between">
+                <div class="p-4 sm:p-6 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-bag-shopping text-indigo-600 text-xl"></i>
+                        <h2 class="text-lg font-bold text-gray-900" id="txt-cart-title">Your Shopping Cart</h2>
                     </div>
-                    <div>
-                        <h4 id="chat-header-title" class="font-bold text-sm">Angkor Store Support</h4>
-                        <p id="chat-header-subtitle" class="text-xs text-slate-400">Replies typically in 2 mins</p>
-                    </div>
+                    <button onclick="toggleCartDrawer(false)" class="text-gray-400 hover:text-gray-600 p-1 rounded-lg">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
                 </div>
-                <button onclick="toggleChatModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-50 custom-scrollbar text-sm"></div>
-            <div id="chat-templates" class="p-2 bg-slate-100 border-t border-slate-200 flex space-x-2 overflow-x-auto text-xs custom-scrollbar"></div>
-
-            <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2">
-                <input type="text" id="chat-input" onkeypress="if(event.key==='Enter') sendMessage()" placeholder="Write a message..." 
-                    class="flex-1 bg-slate-100 text-sm border-0 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-brand-500 focus:outline-none">
-                <button id="chat-send-btn" onclick="sendMessage()" class="bg-brand-600 hover:bg-brand-700 text-white p-2.5 rounded-xl transition">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
+                <div id="cart-items-list" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4"></div>
+                <div class="p-4 sm:p-6 border-t border-gray-100 bg-gray-50 space-y-4">
+                    <div class="space-y-1.5 text-sm">
+                        <div class="flex justify-between text-gray-500">
+                            <span id="txt-subtotal">Subtotal</span>
+                            <span id="cart-subtotal" class="font-semibold text-gray-800">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-gray-500">
+                            <span id="txt-delivery">Delivery (Phnom Penh)</span>
+                            <span id="cart-delivery" class="font-semibold text-gray-800">$1.50</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-gray-900 text-base pt-2 border-t border-gray-200">
+                            <span id="txt-grand-total">Total</span>
+                            <span id="cart-total" class="text-indigo-600 font-extrabold">$0.00</span>
+                        </div>
+                    </div>
+                    <button onclick="openCheckoutModal()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition text-center text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span id="txt-btn-checkout">Proceed to Checkout</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- CART DRAWER -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex justify-end">
-        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between">
-            <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-bag-shopping text-brand-600 text-lg"></i>
-                    <h3 class="font-bold text-slate-900 text-base" id="lbl-cart-drawer-title">Your Shopping Cart</h3>
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4">
+        <div class="modal-bg fixed inset-0" onclick="closeProductModal()"></div>
+        <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 relative flex flex-col md:flex-row max-h-[90vh]">
+            <button onclick="closeProductModal()" class="absolute top-3 right-3 z-20 w-8 h-8 bg-black/20 hover:bg-black/40 text-white rounded-full flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-full md:w-1/2 bg-gray-100 h-64 md:h-auto flex items-center justify-center relative p-4">
+                <img id="modal-product-img" src="" alt="Product Image" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="w-full md:w-1/2 p-6 flex flex-col justify-between overflow-y-auto">
+                <div class="space-y-3">
+                    <span id="modal-product-cat" class="text-[11px] font-bold tracking-wider uppercase text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md"></span>
+                    <h3 id="modal-product-title" class="text-xl font-bold text-gray-900 leading-snug"></h3>
+                    <p id="modal-product-price" class="text-2xl font-black text-indigo-600"></p>
+                    <p id="modal-product-desc" class="text-sm text-gray-600 leading-relaxed"></p>
                 </div>
-                <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-slate-600 p-1">
+                <div class="pt-6 mt-6 border-t border-gray-100 space-y-2">
+                    <button id="modal-add-cart-btn" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span id="txt-modal-add">Add to Cart</span>
+                    </button>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="modal-tg-buy-btn" class="py-2.5 px-3 bg-sky-50 hover:bg-sky-500 text-sky-700 hover:text-white border border-sky-200 font-bold rounded-xl transition text-xs flex items-center justify-center space-x-1.5 shadow-sm group/modaltg">
+                            <i class="fa-brands fa-telegram text-lg text-sky-500 group-hover/modaltg:text-white"></i>
+                            <span>Buy via Telegram</span>
+                        </button>
+                        <button id="modal-msg-buy-btn" class="py-2.5 px-3 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white border border-blue-200 font-bold rounded-xl transition text-xs flex items-center justify-center space-x-1.5 shadow-sm group/modalmsg">
+                            <i class="fa-brands fa-facebook-messenger text-lg text-blue-600 group-hover/modalmsg:text-white"></i>
+                            <span>Buy via Messenger</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4">
+        <div class="modal-bg fixed inset-0" onclick="closeCheckoutModal()"></div>
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl z-10 relative p-6 space-y-5 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h3 class="text-lg font-bold text-gray-900" id="txt-checkout-header">Complete Your Order</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-gray-600">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
-
-            <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar"></div>
-
-            <div class="p-4 border-t border-slate-200 bg-slate-50 space-y-3">
-                <div class="space-y-1 text-sm">
-                    <div class="flex justify-between text-slate-600">
-                        <span id="lbl-subtotal">Subtotal</span>
-                        <span id="cart-subtotal">$0.00</span>
-                    </div>
-                    <div class="flex justify-between text-slate-600">
-                        <span id="lbl-delivery">Est. Delivery (Phnom Penh / Express)</span>
-                        <span class="text-emerald-600 font-medium">$1.50</span>
-                    </div>
-                    <div class="flex justify-between text-slate-900 font-bold text-lg pt-2 border-t border-slate-200">
-                        <span id="lbl-total">Total Amount</span>
-                        <div class="text-right">
-                            <div id="cart-total-usd" class="text-brand-600">$0.00</div>
-                            <div id="cart-total-khr" class="text-xs text-slate-500 font-normal">0 ៛</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-2 pt-1">
-                    <button onclick="orderViaTelegram(null, true)" class="w-full bg-[#229ED9] hover:bg-[#1e8dbf] text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center space-x-2 shadow-md">
-                        <i class="fa-brands fa-telegram text-lg"></i>
-                        <span id="lbl-order-tg">Order Cart via Telegram</span>
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider" id="txt-shipping-info">Shipping Details</h4>
+                <input type="text" id="cust-name" placeholder="Full Name *" class="w-full px-3.5 py-2.5 border text-sm rounded-lg focus:outline-none focus:border-indigo-500">
+                <input type="tel" id="cust-phone" placeholder="Phone Number (e.g., 012 345 678) *" class="w-full px-3.5 py-2.5 border text-sm rounded-lg focus:outline-none focus:border-indigo-500">
+                <input type="text" id="cust-address" placeholder="Delivery Address / City / Province *" class="w-full px-3.5 py-2.5 border text-sm rounded-lg focus:outline-none focus:border-indigo-500">
+                <textarea id="cust-notes" placeholder="Delivery Notes / Special Instructions (Optional)" class="w-full px-3.5 py-2 border text-sm rounded-lg focus:outline-none focus:border-indigo-500" rows="2"></textarea>
+            </div>
+            <div class="space-y-3 border-t pt-4">
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider" id="txt-select-channel">Choose Order & Payment Method</h4>
+                <div class="space-y-2">
+                    <button onclick="processOrder('khqr')" class="w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl shadow-md transition text-sm flex items-center justify-between">
+                        <span class="flex items-center space-x-2">
+                            <i class="fa-solid fa-qrcode text-lg"></i>
+                            <span>Bakong KHQR Payment</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-right text-xs opacity-75"></i>
                     </button>
-                    <button onclick="orderViaMessenger(null, true)" class="w-full bg-[#0084FF] hover:bg-[#0073e6] text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center space-x-2 shadow-md">
-                        <i class="fa-brands fa-facebook-messenger text-lg"></i>
-                        <span id="lbl-order-msg">Order Cart via Messenger</span>
-                    </button>
-                    <button id="checkout-btn" onclick="openCheckoutModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 rounded-xl transition flex items-center justify-center space-x-2 text-xs">
-                        <i class="fa-solid fa-qrcode text-emerald-400"></i>
-                        <span id="lbl-pay-khqr">Pay via KHQR Direct</span>
-                    </button>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="processOrder('telegram')" class="py-2.5 px-3 bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 font-bold rounded-xl transition text-xs flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-telegram text-lg text-sky-500"></i>
+                            <span>Send via Telegram</span>
+                        </button>
+                        <button onclick="processOrder('messenger')" class="py-2.5 px-3 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-bold rounded-xl transition text-xs flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-facebook-messenger text-lg text-blue-600"></i>
+                            <span>Send via Messenger</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
-    <div id="checkout-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div class="bg-slate-900 text-white p-4 flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <span class="bg-emerald-500 text-slate-950 text-xs font-bold px-2 py-0.5 rounded">KHQR Direct</span>
-                    <h3 class="font-bold text-base" id="lbl-checkout-title">Checkout & Payment</h3>
-                </div>
-                <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
+    <div id="khqr-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4">
+        <div class="modal-bg fixed inset-0" onclick="closeKhqrModal()"></div>
+        <div class="bg-white rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl z-10 relative p-6 text-center space-y-4">
+            <div class="bg-red-600 text-white py-2 px-4 rounded-lg inline-block font-black tracking-wider text-sm shadow-sm">
+                Bakong KHQR Payment
             </div>
-
-            <div class="p-6 overflow-y-auto space-y-5 custom-scrollbar">
-                <div class="space-y-3">
-                    <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider" id="lbl-step1-title">1. Delivery Destination</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm">
-                        <input type="text" id="ship-name" placeholder="Full Name" required class="border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                        <input type="text" id="ship-phone" placeholder="Phone Number (e.g. 012...)" required class="border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 text-sm">
-                        <select id="ship-province" class="border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                            <option value="Phnom Penh">Phnom Penh</option>
-                            <option value="Siem Reap">Siem Reap</option>
-                            <option value="Battambang">Battambang</option>
-                            <option value="Sihanoukville">Preah Sihanouk</option>
-                            <option value="Kampot">Kampot</option>
-                            <option value="Kandal">Kandal</option>
-                            <option value="Other Province">Other Province</option>
-                        </select>
-                        <input type="text" id="ship-address" placeholder="Sangkat / House / Street No." required class="border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 rounded-2xl p-5 text-white text-center space-y-3 shadow-inner">
-                    <div class="inline-flex items-center space-x-1 bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold border border-emerald-500/30">
-                        <i class="fa-solid fa-qrcode"></i>
-                        <span id="lbl-scan-khqr">Scan Bakong KHQR Code</span>
-                    </div>
-
-                    <div class="bg-white p-4 rounded-xl inline-block shadow-lg mx-auto border-4 border-emerald-500">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=KHQR_ANGKOR_STORE_DIRECT_PAYMENT" alt="Bakong KHQR Code" class="w-40 h-40 object-contain mx-auto">
-                        <p class="text-[10px] text-slate-800 font-bold mt-2 uppercase tracking-widest">Bakong KHQR Accepted</p>
-                    </div>
-
-                    <div>
-                        <p class="text-xs text-slate-400" id="lbl-merchant-name-title">Merchant Account Name:</p>
-                        <p id="khqr-merchant-name" class="font-bold text-emerald-400 text-sm">ANGKOR EXPRESS ONLINE STORE</p>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-2 text-[11px] pt-2 border-t border-slate-800 text-slate-300">
-                        <div class="bg-slate-800 p-2 rounded-lg">
-                            <span class="text-blue-400 font-bold block">ABA Bank</span>
-                            <span id="khqr-aba-acc">000 123 456</span>
-                        </div>
-                        <div class="bg-slate-800 p-2 rounded-lg">
-                            <span class="text-lime-400 font-bold block">Wing Bank</span>
-                            <span id="khqr-wing-acc">098 765 432</span>
-                        </div>
-                        <div class="bg-slate-800 p-2 rounded-lg">
-                            <span class="text-sky-300 font-bold block">ACLEDA</span>
-                            <span id="khqr-acleda-acc">1234 5678 90</span>
-                        </div>
-                    </div>
-
-                    <div class="max-w-xs mx-auto space-y-2 pt-1">
-                        <label class="block text-[11px] text-slate-400" id="lbl-trx-ref">Payment Ref / Transaction ID (Optional):</label>
-                        <input type="text" id="trx-ref-input" placeholder="e.g., TRX #987214 or ABA Ref" 
-                            class="w-full bg-slate-800 text-white text-center text-sm border border-slate-700 rounded-lg p-2 focus:ring-2 focus:ring-brand-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 text-center space-y-3">
-                    <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-blue-900" id="lbl-msg-confirm-title">
-                        ⚡ Want to confirm or send slip via Messenger or Telegram?
-                    </h4>
-                    <div class="flex flex-col sm:flex-row gap-2 justify-center">
-                        <button type="button" onclick="orderViaTelegram(null, true)" class="bg-[#229ED9] hover:bg-[#1e8dbf] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center justify-center space-x-2 transition">
-                            <i class="fa-brands fa-telegram text-base"></i>
-                            <span id="lbl-send-tg">Send Order to Telegram</span>
-                        </button>
-                        <button type="button" onclick="orderViaMessenger(null, true)" class="bg-[#0084FF] hover:bg-[#0073e6] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center justify-center space-x-2 transition">
-                            <i class="fa-brands fa-facebook-messenger text-base"></i>
-                            <span id="lbl-send-msg">Send Order to Messenger</span>
-                        </button>
-                    </div>
-                </div>
+            <p class="text-xs text-gray-500">Scan using any Cambodian Mobile Banking App (ABA, Wing, ACLEDA, Sathapana, etc.)</p>
+            <div class="bg-gray-50 p-4 border rounded-xl flex flex-col items-center justify-center space-y-2">
+                <img id="khqr-img-code" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=BakongKHQR_AngkorStore_Payment" alt="KHQR Code" class="w-48 h-48 rounded-lg shadow-sm border border-gray-200">
+                <p id="khqr-amount-display" class="text-xl font-black text-gray-900 mt-2">$0.00</p>
+                <p id="khqr-merchant" class="text-xs font-semibold text-gray-600">Merchant: AngkorStore Express</p>
             </div>
-
-            <div class="p-4 bg-slate-100 border-t border-slate-200 flex items-center justify-between">
-                <button onclick="closeCheckoutModal()" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900" id="lbl-cancel">Cancel</button>
-                <button onclick="confirmOrderPayment()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-xl transition shadow-md flex items-center space-x-2">
-                    <i class="fa-solid fa-check-circle"></i>
-                    <span id="lbl-submit-pay">Confirm & Submit Payment</span>
-                </button>
+            <div class="space-y-2 text-left">
+                <label class="block text-xs font-bold text-gray-600 uppercase">Transaction Hash / Reference Code (Optional)</label>
+                <input type="text" id="khqr-ref-code" placeholder="Enter last 4-6 digits of transfer ID" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:border-red-500">
             </div>
+            <button onclick="confirmKhqrPayment()" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl shadow-md transition text-sm">
+                Confirm Payment & Submit Order
+            </button>
         </div>
     </div>
 
-    <!-- USER AUTH MODAL -->
-    <div id="auth-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-sm rounded-2xl shadow-2xl p-6 space-y-4">
+    <div id="admin-login-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4">
+        <div class="modal-bg fixed inset-0" onclick="closeAdminModal()"></div>
+        <div class="bg-white rounded-2xl max-w-sm w-full overflow-hidden shadow-2xl z-10 relative p-6 space-y-4">
             <div class="text-center">
-                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl font-bold mx-auto mb-2 shadow-lg">
-                    <i class="fa-solid fa-store"></i>
-                </div>
-                <h3 class="font-bold text-xl text-slate-900" id="lbl-auth-title">Shop Owner Portal</h3>
-                <p class="text-xs text-slate-500" id="lbl-auth-sub">Log in to manage store, categories, and update password</p>
-            </div>
-
-            <form id="auth-form" onsubmit="handleAuthSubmit(event)" class="space-y-3 text-sm">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-auth-email">Owner Username / Email</label>
-                    <input type="text" id="auth-email" required placeholder="Admin or Prasith1980@gmail.com" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-amber-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-auth-pass">Password</label>
-                    <input type="password" id="auth-password" required placeholder="••••••••" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-amber-500">
-                </div>
-
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-2.5 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl">
                     <i class="fa-solid fa-lock"></i>
-                    <span id="lbl-auth-login-btn">Log In as Shop Owner</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Admin Authentication</h3>
+                <p class="text-xs text-gray-500">Please enter your credentials to access the management portal</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-3">
+                <div>
+                    <input type="text" id="admin-user" placeholder="Username / Email" required class="w-full px-3.5 py-2.5 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <input type="password" id="admin-pass" placeholder="Password" required class="w-full px-3.5 py-2.5 border rounded-lg text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                <p id="admin-login-err" class="text-xs text-red-500 hidden text-center font-medium">Invalid username or password. Please try again.</p>
+                <button type="submit" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition text-sm shadow-sm">
+                    Login to Portal
                 </button>
             </form>
-
-            <button id="modal-change-pass-btn" onclick="openPasswordUpdateModal()" class="hidden w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center space-x-2 shadow-sm">
-                <i class="fa-solid fa-key text-amber-400"></i>
-                <span id="lbl-change-pass-trigger">Change Admin Password</span>
-            </button>
-
-            <button id="modal-logout-btn" onclick="handleLogout()" class="hidden w-full bg-rose-100 hover:bg-rose-200 text-rose-700 font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center space-x-2 shadow-sm">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span id="lbl-modal-logout">Log Out Admin Session</span>
-            </button>
-
-            <button onclick="toggleAuthModal()" class="w-full text-center text-xs text-slate-400 hover:text-slate-600 pt-1" id="lbl-auth-close">Close</button>
         </div>
     </div>
 
-    <!-- ADMIN PASSWORD UPDATE MODAL -->
-    <div id="password-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-sm rounded-2xl shadow-2xl p-6 space-y-4">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-key text-amber-500 text-lg"></i>
-                    <h3 class="font-bold text-lg text-slate-900" id="lbl-pw-modal-title">Update Admin Password</h3>
-                </div>
-                <button onclick="closePasswordUpdateModal()" class="text-slate-400 hover:text-slate-600">
-                    <i class="fa-solid fa-xmark text-lg"></i>
+    <div id="product-form-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4">
+        <div class="modal-bg fixed inset-0" onclick="closeProductFormModal()"></div>
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl z-10 relative p-6 space-y-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h3 id="product-form-title" class="text-lg font-bold text-gray-900">Add New Product</h3>
+                <button onclick="closeProductFormModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
-
-            <form id="password-update-form" onsubmit="handlePasswordUpdateSubmit(event)" class="space-y-3 text-sm">
+            <form id="product-crud-form" onsubmit="saveProductForm(event)" class="space-y-3 text-sm">
+                <input type="hidden" id="crud-product-id">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-curr-pass">Current Password</label>
-                    <input type="password" id="pw-current" required placeholder="••••••••" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-amber-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-new-pass">New Password</label>
-                    <input type="password" id="pw-new" required minlength="6" placeholder="At least 6 characters" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-amber-500">
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Product Title (EN) *</label>
+                    <input type="text" id="crud-title" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-confirm-pass">Confirm New Password</label>
-                    <input type="password" id="pw-confirm" required placeholder="Re-enter new password" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-amber-500">
-                </div>
-
-                <div class="flex justify-end space-x-2 pt-2 border-t border-slate-200">
-                    <button type="button" onclick="closePasswordUpdateModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900" id="lbl-pw-cancel">Cancel</button>
-                    <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-xl text-xs transition shadow-md">
-                        <span id="lbl-save-pw">Update Password</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- CATEGORY MANAGEMENT MODAL -->
-    <div id="category-manage-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 space-y-4 max-h-[90vh] flex flex-col">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-tags text-brand-600 text-lg"></i>
-                    <h3 class="font-bold text-lg text-slate-900" id="lbl-cat-manage-title">Manage Product Categories</h3>
-                </div>
-                <button onclick="closeCategoryManageModal()" class="text-slate-400 hover:text-slate-600">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <form onsubmit="handleCategoryAddSubmit(event)" class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
-                <h4 class="text-xs font-bold text-slate-800" id="lbl-add-cat-sub">Add New Category</h4>
-                <div class="flex gap-2">
-                    <input type="text" id="cat-icon-input" placeholder="Emoji (e.g. 🎧)" required class="w-20 border border-slate-300 rounded-xl p-2 text-sm text-center">
-                    <input type="text" id="cat-name-input" placeholder="Category Name (e.g. Gadgets)" required class="flex-1 border border-slate-300 rounded-xl p-2 text-sm">
-                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-xl text-xs transition shadow-md whitespace-nowrap">
-                        <i class="fa-solid fa-plus"></i> <span id="lbl-btn-add-cat">Add</span>
-                    </button>
-                </div>
-            </form>
-
-            <div class="flex-1 overflow-y-auto space-y-2 custom-scrollbar pr-1" id="categories-manage-list"></div>
-
-            <div class="pt-2 border-t border-slate-200 flex justify-end">
-                <button onclick="closeCategoryManageModal()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-5 py-2 rounded-xl text-xs transition" id="lbl-cat-done-btn">Done</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- PRODUCT DETAIL QUICK VIEW MODAL -->
-    <div id="product-detail-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row">
-            <div class="sm:w-1/2 bg-slate-100 h-64 sm:h-auto relative">
-                <img id="pd-image" src="" alt="Product" class="w-full h-full object-cover">
-                <span id="pd-category" class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full"></span>
-            </div>
-            <div class="sm:w-1/2 p-6 flex flex-col justify-between space-y-4">
-                <div>
-                    <div class="flex justify-between items-start">
-                        <h3 id="pd-title" class="font-bold text-lg text-slate-900 leading-tight"></h3>
-                        <button onclick="closeProductDetailModal()" class="text-slate-400 hover:text-slate-600 p-1">
-                            <i class="fa-solid fa-xmark text-lg"></i>
-                        </button>
-                    </div>
-                    <div class="mt-2 flex items-baseline space-x-2">
-                        <span id="pd-price-usd" class="text-2xl font-extrabold text-brand-600"></span>
-                        <span id="pd-price-khr" class="text-sm font-semibold text-slate-500"></span>
-                    </div>
-                    <p id="pd-desc" class="text-xs text-slate-600 mt-3 leading-relaxed"></p>
-                </div>
-
-                <div class="space-y-2 pt-2 border-t border-slate-100">
-                    <button id="pd-add-btn" onclick="" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl transition flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span id="lbl-pd-add">Add to Cart</span>
-                    </button>
-
-                    <div class="grid grid-cols-2 gap-2 pt-1">
-                        <button id="pd-telegram-btn" onclick="" class="bg-[#229ED9] hover:bg-[#1e8dbf] text-white font-bold py-2 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm">
-                            <i class="fa-brands fa-telegram text-base"></i>
-                            <span>Buy Telegram</span>
-                        </button>
-                        <button id="pd-messenger-btn" onclick="" class="bg-[#0084FF] hover:bg-[#0073e6] text-white font-bold py-2 rounded-xl text-xs transition flex items-center justify-center space-x-1.5 shadow-sm">
-                            <i class="fa-brands fa-facebook-messenger text-base"></i>
-                            <span>Buy Messenger</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PRODUCT EDIT / ADD MODAL -->
-    <div id="product-edit-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 space-y-4">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
-                <h3 id="pem-title" class="font-bold text-lg text-slate-900">Add New Product</h3>
-                <button onclick="closeProductEditModal()" class="text-slate-400 hover:text-slate-600">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <form id="product-edit-form" onsubmit="handleProductFormSubmit(event)" class="space-y-3 text-sm">
-                <input type="hidden" id="pem-id">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-pem-name">Product Title</label>
-                    <input type="text" id="pem-name" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Product Title (Khmer)</label>
+                    <input type="text" id="crud-title-km" placeholder="ឈ្មោះផលិតផលជាភាសាខ្មែរ" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500 khmer-font">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-pem-cat">Category</label>
-                        <select id="pem-category" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500"></select>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Price ($ USD) *</label>
+                        <input type="number" step="0.01" id="crud-price" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-pem-price">Price ($ USD)</label>
-                        <input type="number" step="0.01" id="pem-price" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Category *</label>
+                        <select id="crud-category" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500 bg-white"></select>
+                    </div>
+                </div>
+                <div class="space-y-2 border-t border-b border-gray-100 py-3 my-2">
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Product Image *</label>
+                    <div>
+                        <label class="block text-[11px] text-gray-500 mb-1">Upload Photo from Device (JPG, PNG, WebP):</label>
+                        <input type="file" id="crud-image-file" accept="image/*" onchange="handleImageFileUpload(event)" class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 cursor-pointer border rounded-lg p-1">
+                    </div>
+                    <div class="text-center text-xs text-gray-400 my-1">- OR -</div>
+                    <div>
+                        <label class="block text-[11px] text-gray-500 mb-1">Image Web Address / URL:</label>
+                        <input type="url" id="crud-image-url" placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 border rounded-lg text-xs focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div id="crud-img-preview-box" class="hidden mt-2 p-2 bg-gray-50 border rounded-lg text-center">
+                        <span class="block text-[10px] text-gray-400 font-bold mb-1 uppercase">Image Preview</span>
+                        <img id="crud-img-preview" src="" alt="Preview" class="h-24 mx-auto object-contain rounded">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-pem-img">Image URL</label>
-                    <input type="url" id="pem-image" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Description (EN)</label>
+                    <textarea id="crud-desc" rows="2" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"></textarea>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-pem-desc">Description</label>
-                    <textarea id="pem-desc" rows="3" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500"></textarea>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Description (Khmer)</label>
+                    <textarea id="crud-desc-km" rows="2" placeholder="ការពិពណ៌នាជាភាសាខ្មែរ" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-indigo-500 khmer-font"></textarea>
                 </div>
-                <div class="flex justify-end space-x-2 pt-2 border-t border-slate-200">
-                    <button type="button" onclick="closeProductEditModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900" id="lbl-pem-cancel">Cancel</button>
-                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2 rounded-xl text-xs transition shadow-md">
-                        <span id="pem-submit-label">Save Product</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- STORE & WEBSITE SETTINGS MODAL -->
-    <div id="store-settings-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 space-y-4 max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-3">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-sliders text-brand-600 text-lg"></i>
-                    <h3 class="font-bold text-lg text-slate-900" id="lbl-ss-modal-title">Edit Store & Website Information</h3>
-                </div>
-                <button onclick="closeStoreSettingsModal()" class="text-slate-400 hover:text-slate-600">
-                    <i class="fa-solid fa-xmark text-lg"></i>
+                <button type="submit" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition shadow-sm mt-2">
+                    Save Product
                 </button>
-            </div>
-
-            <form id="store-settings-form" onsubmit="handleStoreSettingsSubmit(event)" class="space-y-3 text-sm">
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Store Name</label>
-                        <input type="text" id="ss-name" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Tagline / Subtitle</label>
-                        <input type="text" id="ss-tagline" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Top Announcement Bar Text</label>
-                    <input type="text" id="ss-announcement" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Hero Banner Title</label>
-                    <input type="text" id="ss-hero-title" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Hero Banner Description</label>
-                    <textarea id="ss-hero-desc" rows="2" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500"></textarea>
-                </div>
-
-                <div class="border-t border-slate-200 pt-3">
-                    <h4 class="font-bold text-xs text-slate-800 uppercase tracking-wider mb-2">Social Messaging Links</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">Telegram Username (without @)</label>
-                            <input type="text" id="ss-telegram" required placeholder="Loka175" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">Facebook Messenger Page ID</label>
-                            <input type="text" id="ss-messenger" required placeholder="1222704867600930" class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-200 pt-3">
-                    <h4 class="font-bold text-xs text-slate-800 uppercase tracking-wider mb-2">Local Bank & KHQR Information</h4>
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">KHQR Merchant Account Name</label>
-                            <input type="text" id="ss-merchant-name" required class="w-full border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
-                        </div>
-                        <div class="grid grid-cols-3 gap-2">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">ABA Account #</label>
-                                <input type="text" id="ss-aba-acc" required class="w-full border border-slate-300 rounded-xl p-2 focus:ring-2 focus:ring-brand-500 text-xs">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">Wing Account #</label>
-                                <input type="text" id="ss-wing-acc" required class="w-full border border-slate-300 rounded-xl p-2 focus:ring-2 focus:ring-brand-500 text-xs">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">ACLEDA #</label>
-                                <input type="text" id="ss-acleda-acc" required class="w-full border border-slate-300 rounded-xl p-2 focus:ring-2 focus:ring-brand-500 text-xs">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end space-x-2 pt-3 border-t border-slate-200">
-                    <button type="button" onclick="closeStoreSettingsModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900">Cancel</button>
-                    <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2 rounded-xl text-xs transition shadow-md">
-                        Save Website Settings
-                    </button>
-                </div>
             </form>
         </div>
     </div>
 
-    <!-- KHQR INFO GUIDE MODAL -->
-    <div id="khqr-info-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 space-y-4 text-center">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                <i class="fa-solid fa-qrcode"></i>
+    <footer class="bg-gray-900 text-gray-400 py-10 mt-auto border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black">A</div>
+                    <span class="text-lg font-bold text-white tracking-wide">AngkorStore</span>
+                </div>
+                <p class="text-xs leading-relaxed" id="txt-footer-about">Your premier online store in Cambodia. Delivering high quality electronics, fashion, and local specialty goods straight to your doorstep.</p>
             </div>
-            <h3 class="font-bold text-lg text-slate-900" id="lbl-khqr-info-title">How to Pay with Bakong KHQR</h3>
-            <p class="text-xs text-slate-600 leading-relaxed" id="lbl-khqr-info-desc">
-                Bakong KHQR is Cambodia's national universal payment standard. You can scan our KHQR using any Cambodian bank app:
-            </p>
-            <div class="grid grid-cols-2 gap-2 text-left text-xs font-medium text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>ABA Bank</span></div>
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>Wing Bank</span></div>
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>ACLEDA Mobile</span></div>
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>Canadia Bank</span></div>
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>Sathapana Bank</span></div>
-                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-500"></i><span>Bakong App</span></div>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-3 uppercase tracking-wider">Express Payment</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-qrcode text-red-500"></i><span>Bakong KHQR Universal</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-building-columns text-blue-400"></i><span>ABA Bank Transfer</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-wallet text-amber-400"></i><span>Wing / ACLEDA / Cash on Delivery</span></li>
+                </ul>
             </div>
-            <button onclick="closeKHQRInfoModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition" id="lbl-got-it">Got It</button>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-3 uppercase tracking-wider">Fast Delivery</h4>
+                <p class="text-xs leading-relaxed">Phnom Penh Express: 1 - 3 Hours<br>25 Provinces: 1 - 2 Business Days</p>
+            </div>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-3 uppercase tracking-wider">Contact & Support</h4>
+                <div class="space-y-2 text-xs">
+                    <p class="flex items-center space-x-2"><i class="fa-brands fa-telegram text-sky-400"></i><span id="footer-tg-display">@Loka175</span></p>
+                    <p class="flex items-center space-x-2"><i class="fa-solid fa-phone text-emerald-400"></i><span>+855 10 789 175</span></p>
+                    <p class="flex items-center space-x-2"><i class="fa-solid fa-location-dot text-indigo-400"></i><span>Phnom Penh, Cambodia</span></p>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+            &copy; 2026 AngkorStore Express. All rights reserved.
+        </div>
+    </footer>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
-
-    <!-- External JavaScript File -->
-    <script src="script.js"></script>
+    <!-- Script File Integration -->
+    <script src="app.js"></script>
 </body>
 </html>
