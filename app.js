@@ -196,7 +196,7 @@ let products = [
         title: 'Kampot Black Pepper (Organic 250g)',
         category: 'Cambodian Local',
         priceUSD: 6.50,
-        image: 'https://github.com/QuickBuy175/QB1/blob/97ebca442c508353f9ef41fa1042fb2bd80d8282/photo1.jpg?auto=format&fit=crop&w=600&q=80',
+        image: 'https://www.google.com/maps/place/LOKA+%E1%9E%9F%E1%9E%B6%E1%9E%94%E1%9F%8A%E1%9E%BC%E1%9E%9B%E1%9E%B6%E1%9E%84%E1%9E%85%E1%9E%B6%E1%9E%93/@11.6028052,104.908841,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhBJZHN0GlyrSzpDfIcQKJj3!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgrass-cs%2FAABkmLdsrJTfUaUyJzI4L4RPJyu2cYyaEfxribRFIuIS-KhxP7HyUAKGj6a7T74qEqKsK5XUzL-WWqxMCyDz1kThiXniK-fJrqOr3drOu-eoVb0qiUlZrx8Y9xanhB5bb2gAWHvRauu64KefXNVV%3Dw86-h154-k-no!7i768!8i1376!4m7!3m6!1s0x310953d475fd30fb:0x92a8551ee4030bfa!8m2!3d11.6028052!4d104.908841!10e5!16s%2Fg%2F11zh50l552?authuser=0&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D#/photo1.jpg?auto=format&fit=crop&w=600&q=80',
         description: 'World-renowned GI certified Kampot Organic Pepper harvested from farms in Kampot, Cambodia. Rich aroma and exquisite spiciness.',
         rating: 4.9
     },
