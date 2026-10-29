@@ -13,7 +13,7 @@ let storeInfo = {
     merchantName: 'BAYON EXPRESS ONLINE STORE',
     abaAccount: '000 648 592',
     wingAccount: '069 456 175',
-    acledaAccount: '1234 5678 90'
+    acledaAccount: '០០០០'
 };
 
 // App State
@@ -208,6 +208,24 @@ let products = [
         image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/730%20ml.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
         description: 'សាប៊ូលាងចាន LOKA ចំណុះ 730 ml / ផលិតផលខ្មែរ​ $9.90/កេស/12 ដប',
         rating: 4.9
+    },
+    {
+        id: 'p3',
+        title: 'សាប៊ូបោកគក់ LOKA ក្លិនឈើរី (3500 ml)',
+        category: 'Cambodian Local',
+        priceUSD: 5.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Laundry%20Cherry%20-%20Copy.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូបោកគក់ LOKA ក្លិនឈើរី ចំណុះ 3500 ml / ផលិតផលខ្មែរ​ ',
+        rating: 4.8
+    },
+     {
+        id: 'p4',
+        title: 'សាប៊ូបោកគក់ LOKA ក្លិនឡាវេនដ័រ (3500 ml)',
+        category: 'Cambodian Local',
+        priceUSD: 5.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Laundry%20lavendor.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូបោកគក់ LOKA ក្លិនឡាវេនដ័រ ចំណុះ 3500 ml / ផលិតផលខ្មែរ​ ',
+        rating: 4.8
     },
     {
         id: 'p3',
