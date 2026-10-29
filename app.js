@@ -210,7 +210,7 @@ let products = [
         rating: 4.9
     },
      {
-        id: 'p2',
+        id: 'p3',
         title: 'សាប៊ូលាងចាន LOKA (10 L)',
         category: 'Cambodian Local',
         priceUSD: 8.75,
@@ -219,7 +219,7 @@ let products = [
         rating: 4.5
     },
     {
-        id: 'p2',
+        id: 'p4',
         title: 'សាប៊ូលាងចាន LOKA (20 L)',
         category: 'Cambodian Local',
         priceUSD: 12.50,
@@ -228,7 +228,7 @@ let products = [
         rating: 4.5
     },
     {
-        id: 'p3',
+        id: 'p5',
         title: 'សាប៊ូបោកគក់ LOKA ក្លិនឈើរី (3500 ml)',
         category: 'Cambodian Local',
         priceUSD: 5.50,
@@ -237,7 +237,7 @@ let products = [
         rating: 4.8
     },
      {
-        id: 'p4',
+        id: 'p6',
         title: 'សាប៊ូបោកគក់ LOKA ក្លិនឡាវេនដ័រ (3500 ml)',
         category: 'Cambodian Local',
         priceUSD: 5.50,
@@ -247,7 +247,7 @@ let products = [
     },
   
   {
-        id: 'p2',
+        id: 'p7',
         title: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប (500ml)',
         category: 'Cambodian Local',
         priceUSD: 3.00,
@@ -256,7 +256,7 @@ let products = [
         rating: 4.9
     },
   {
-        id: 'p9',
+        id: 'p8',
         title: 'Demo',
         category: 'Fashionsss',
         priceUSD: 18.00,
