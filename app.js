@@ -1031,7 +1031,7 @@ function sendMessage() {
         setTimeout(() => {
             chatHistory.push({
                 sender: 'merchant',
-                text: "Orkun! Thanks for messaging Angkor Store. Tap 'Order via Telegram' or 'Order via Messenger' for fastest response!",
+                text: "Orkun! Thanks for messaging Bayon Store. Tap 'Order via Telegram' or 'Order via Messenger' for fastest response!",
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             });
             renderChat();
