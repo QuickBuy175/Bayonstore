@@ -248,7 +248,7 @@ let products = [
     {
         id: 'p3',
         title: 'Demo',
-        category: 'Electronics',
+        category: 'Electronicsssss',
         priceUSD: 29.00,
         image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80',
         description: 'Active Noise Cancellation, 24-hour battery life, sweat resistance. Perfect for daily commute and workouts.',
@@ -257,14 +257,14 @@ let products = [
     {
         id: 'p4',
         title: 'Demo',
-        category: 'Fashion',
+        category: 'Fashionssssss',
         priceUSD: 35.00,
         image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=600&q=80',
         description: 'Authentic 100% Cambodian handwoven silk scarf crafted by artisan weavers in Takeo province. Elegant traditional patterns.',
         rating: 5.0
     },
     {
-        id: 'p6',
+        id: 'p2',
         title: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប (500ml)',
         category: 'Cambodian Local',
         priceUSD: 3.00,
@@ -275,7 +275,7 @@ let products = [
     {
         id: 'p8',
         title: 'Demo',
-        category: 'Beauty & Health',
+        category: 'Beauty & Healthssss',
         priceUSD: 12.00,
         image: 'https://images.unsplash.com/photo-1608248597261-83324467911b?auto=format&fit=crop&w=600&q=80',
         description: 'Pure cold-pressed virgin coconut oil lotion for smooth, hydrated skin. 100% natural Cambodian ingredients.',
@@ -284,7 +284,7 @@ let products = [
     {
         id: 'p9',
         title: 'Demo',
-        category: 'Fashion',
+        category: 'Fashionsss',
         priceUSD: 18.00,
         image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80',
         description: 'Breathable lightweight linen shirt designed for tropical Cambodian climate. Available in M, L, XL sizes.',
