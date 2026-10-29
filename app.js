@@ -209,6 +209,24 @@ let products = [
         description: 'សាប៊ូលាងចាន LOKA ចំណុះ 730 ml / ផលិតផលខ្មែរ​ $9.90/កេស/12 ដប',
         rating: 4.9
     },
+     {
+        id: 'p2',
+        title: 'សាប៊ូលាងចាន LOKA (10 L)',
+        category: 'Cambodian Local',
+        priceUSD: 8.75,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Product%20detail.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 10 L / ផលិតផលខ្មែរ​ ',
+        rating: 4.5
+    },
+    {
+        id: 'p2',
+        title: 'សាប៊ូលាងចាន LOKA (20 L)',
+        category: 'Cambodian Local',
+        priceUSD: 12.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Dish%20washing%2020L.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 20 L / ផលិតផលខ្មែរ​ ',
+        rating: 4.5
+    },
     {
         id: 'p3',
         title: 'សាប៊ូបោកគក់ LOKA ក្លិនឈើរី (3500 ml)',
