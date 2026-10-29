@@ -12,7 +12,7 @@ let storeInfo = {
     messengerUser: '1222704867600930',
     merchantName: 'BAYON EXPRESS ONLINE STORE',
     abaAccount: '000 648 592',
-    wingAccount: '098 765 432',
+    wingAccount: '069 456 175',
     acledaAccount: '1234 5678 90'
 };
 
@@ -27,9 +27,9 @@ let searchQuery = '';
 // Dynamic Product Categories List (Admin Managed)
 let categories = [
     { id: 'cat-all', name: 'All', icon: '🛍️', labelKh: 'ទំនិញទាំងអស់' },
+    { id: 'cat-local', name: 'Cambodian Local', icon: '🇰🇭', labelKh: 'ផលិតផលក្នុងស្រុក' },
     { id: 'cat-elec', name: 'Electronics', icon: '📱', labelKh: 'អេឡិចត្រូនិក' },
     { id: 'cat-fash', name: 'Fashion', icon: '👕', labelKh: 'សម្លៀកបំពាក់' },
-    { id: 'cat-local', name: 'Cambodian Local', icon: '🇰🇭', labelKh: 'ផលិតផលក្នុងស្រុក' },
     { id: 'cat-beauty', name: 'Beauty & Health', icon: '✨', labelKh: 'សម្រស់ និងសុខភាព' }
 ];
 
