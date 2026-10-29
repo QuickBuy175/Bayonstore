@@ -8,7 +8,7 @@ let storeInfo = {
     announcement: 'Fast Express Shipping across Phnom Penh & all Cambodian Provinces!',
     heroTitle: 'Shop Local & Global Tech Products',
     heroDesc: 'Pay seamlessly with ABA PAY, Bakong KHQR, Wing, ACLEDA, or order directly via Telegram and Messenger!',
-    telegramUser: 't.me/Loka175',
+    telegramUser: '@Loka175',
     messengerUser: 'm.me/372617426271838',
     merchantName: 'BAYON EXPRESS ONLINE STORE',
     abaAccount: '000 648 592',
