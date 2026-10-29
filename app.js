@@ -1041,7 +1041,7 @@ function sendMessage() {
 
 function sendQuickMessage(msgText) {
     document.getElementById('chat-input').value = msgText;
-    sendMessage();
+    sendMessage(https://t.me/Loka175);
 }
 
 function toggleAuthModal() {
