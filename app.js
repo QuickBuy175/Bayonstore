@@ -201,7 +201,7 @@ let products = [
         rating: 4.9
     },
       {
-        id: 'p២',
+        id: 'p2',
         title: 'សាប៊ូលាងចាន LOKA (730 ml)',
         category: 'Cambodian Local',
         priceUSD: 1.00,
@@ -210,7 +210,7 @@ let products = [
         rating: 4.9
     },
     {
-        id: 'p2',
+        id: 'p3',
         title: 'Phnom Penh 4 Wireless Earbuds Pro',
         category: 'Electronics',
         priceUSD: 29.00,
@@ -219,7 +219,7 @@ let products = [
         rating: 4.7
     },
     {
-        id: 'p3',
+        id: 'p4',
         title: 'Handwoven Khmer Golden Silk Scarf',
         category: 'Fashion',
         priceUSD: 35.00,
@@ -228,7 +228,7 @@ let products = [
         rating: 5.0
     },
     {
-        id: 'p4',
+        id: 'p5',
         title: 'Ultra-Slim Fast PowerBank 20000mAh',
         category: 'Electronics',
         priceUSD: 22.50,
@@ -237,7 +237,7 @@ let products = [
         rating: 4.8
     },
     {
-        id: 'p5',
+        id: 'p6',
         title: 'Mondulkiri Roasted Whole Coffee Beans (500g)',
         category: 'Cambodian Local',
         priceUSD: 9.80,
@@ -246,7 +246,7 @@ let products = [
         rating: 4.9
     },
     {
-        id: 'p6',
+        id: 'p7',
         title: 'Smartwatch Fitness Tracker (Khmer Language)',
         category: 'Electronics',
         priceUSD: 45.00,
@@ -255,7 +255,7 @@ let products = [
         rating: 4.6
     },
     {
-        id: 'p7',
+        id: 'p8',
         title: 'Natural Coconut Body Lotion & Oil',
         category: 'Beauty & Health',
         priceUSD: 12.00,
@@ -264,7 +264,7 @@ let products = [
         rating: 4.8
     },
     {
-        id: 'p8',
+        id: 'p9',
         title: 'Casual Linen Summer Shirt',
         category: 'Fashion',
         priceUSD: 18.00,
