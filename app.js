@@ -1,17 +1,17 @@
 // Exchange rate USD to KHR
-const KHR_RATE = 4100;
+const KHR_RATE = 4000;
 
 // Dynamic Store & Website Information
 let storeInfo = {
-    name: 'AngkorStore',
+    name: 'BayonStore',
     tagline: "Cambodia's Trusted Marketplace",
     announcement: 'Fast Express Shipping across Phnom Penh & all Cambodian Provinces!',
     heroTitle: 'Shop Local & Global Tech Products',
     heroDesc: 'Pay seamlessly with ABA PAY, Bakong KHQR, Wing, ACLEDA, or order directly via Telegram and Messenger!',
     telegramUser: 'Loka175',
     messengerUser: '1222704867600930',
-    merchantName: 'ANGKOR EXPRESS ONLINE STORE',
-    abaAccount: '000 123 456',
+    merchantName: 'BAYON EXPRESS ONLINE STORE',
+    abaAccount: '000 648 592',
     wingAccount: '098 765 432',
     acledaAccount: '1234 5678 90'
 };
@@ -39,8 +39,8 @@ let ownerAccount = {
     email: 'Prasith1980@gmail.com', 
     password: '@1234567', 
     role: 'owner', 
-    shopName: 'Angkor Express Store', 
-    phone: '012 888 999' 
+    shopName: 'Bayon Express Store', 
+    phone: '010 789 175' 
 };
 
 // UI Translation Dictionary for Khmer/English Toggle
