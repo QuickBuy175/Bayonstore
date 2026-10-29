@@ -39,7 +39,7 @@ let ownerAccount = {
     email: 'Prasith1980@gmail.com', 
     password: '@1234567', 
     role: 'owner', 
-    shopName: 'Bayon Express Store', 
+    shopName: 'Bayon Store', 
     phone: '010 789 175' 
 };
 
@@ -197,7 +197,16 @@ let products = [
         category: 'Cambodian Local',
         priceUSD: 0.50,
         image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/380ml.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
-        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 380 ml / ផលិតផលខ្មែរ',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 380 ml / ផលិតផលខ្មែរ​ $10.50/កេស/24 ដប',
+        rating: 4.9
+    },
+      {
+        id: 'p២',
+        title: 'សាប៊ូលាងចាន LOKA (730 ml)',
+        category: 'Cambodian Local',
+        priceUSD: 1.00,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/730%20ml.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 730 ml / ផលិតផលខ្មែរ​ $9.90/កេស/12 ដប',
         rating: 4.9
     },
     {
