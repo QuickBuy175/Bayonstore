@@ -248,7 +248,7 @@ let products = [
     {
         id: 'p3',
         title: 'Demo',
-        category: 'Electronicsssss',
+        category: 'Electronicssss',
         priceUSD: 29.00,
         image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80',
         description: 'Active Noise Cancellation, 24-hour battery life, sweat resistance. Perfect for daily commute and workouts.',
@@ -538,7 +538,7 @@ function orderViaTelegram(productId = null, isCart = false) {
         message = `👋 Hello ${storeInfo.name}!\n\nI want to buy:\n📦 *${p.title}*\n💰 *Price:* $${p.priceUSD.toFixed(2)} (${Math.round(p.priceUSD * KHR_RATE).toLocaleString()} ៛)\n\nPlease check stock and delivery details for Phnom Penh / Provinces. Orkun!`;
     }
 
-    const telegramUrl = `https://t.me/${storeInfo.telegramUser}?text=${encodeURIComponent(message)}`;
+    const telegramUrl = `https:///${storeInfo.telegramUser}?text=${encodeURIComponent(message)}`;
     window.open(telegramUrl, '_blank');
     showToast('📱 Opening Telegram Chat with Seller...');
 }
@@ -1041,7 +1041,7 @@ function sendMessage() {
 
 function sendQuickMessage(msgText) {
     document.getElementById('chat-input').value = msgText;
-    sendMessage(https://t.me/Loka175);
+    sendMessage();
 }
 
 function toggleAuthModal() {
