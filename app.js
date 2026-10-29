@@ -202,7 +202,7 @@ let products = [
     },
     {
         id: 'p2',
-        title: 'Phnom Penh Wireless Earbuds Pro',
+        title: 'Phnom Penh 4 Wireless Earbuds Pro',
         category: 'Electronics',
         priceUSD: 29.00,
         image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80',
