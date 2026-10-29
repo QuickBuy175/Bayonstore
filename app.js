@@ -247,7 +247,7 @@ let products = [
     },
     {
         id: 'p3',
-        title: 'Phnom Penh 4 Wireless Earbuds Pro',
+        title: 'Demo',
         category: 'Electronics',
         priceUSD: 29.00,
         image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80',
@@ -256,21 +256,12 @@ let products = [
     },
     {
         id: 'p4',
-        title: 'Handwoven Khmer Golden Silk Scarf',
+        title: 'Demo',
         category: 'Fashion',
         priceUSD: 35.00,
         image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=600&q=80',
         description: 'Authentic 100% Cambodian handwoven silk scarf crafted by artisan weavers in Takeo province. Elegant traditional patterns.',
         rating: 5.0
-    },
-    {
-        id: 'p5',
-        title: 'Ultra-Slim Fast PowerBank 20000mAh',
-        category: 'Electronics',
-        priceUSD: 22.50,
-        image: 'https://images.unsplash.com/photo-1609592424009-2180093a0279?auto=format&fit=crop&w=600&q=80',
-        description: 'Dual Type-C Fast Charging, charges smartphones up to 5 times. Certified safe for travel and local delivery.',
-        rating: 4.8
     },
     {
         id: 'p6',
@@ -282,17 +273,8 @@ let products = [
         rating: 4.9
     },
     {
-        id: 'p7',
-        title: 'Smartwatch Fitness Tracker (Khmer Language)',
-        category: 'Electronics',
-        priceUSD: 45.00,
-        image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80',
-        description: 'Heart rate monitor, step counter, full Khmer font notifications support, 7-day battery endurance.',
-        rating: 4.6
-    },
-    {
         id: 'p8',
-        title: 'Natural Coconut Body Lotion & Oil',
+        title: 'Demo',
         category: 'Beauty & Health',
         priceUSD: 12.00,
         image: 'https://images.unsplash.com/photo-1608248597261-83324467911b?auto=format&fit=crop&w=600&q=80',
@@ -301,7 +283,7 @@ let products = [
     },
     {
         id: 'p9',
-        title: 'Casual Linen Summer Shirt',
+        title: 'Demo',
         category: 'Fashion',
         priceUSD: 18.00,
         image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80',
