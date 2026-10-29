@@ -187,7 +187,7 @@ let orders = [
 ];
 
 let chatHistory = [
-    { sender: 'merchant', text: 'Choum Reab Suor! Welcome to Angkor Store. Tap "Buy via Telegram" or "Buy via Messenger" to order directly!', time: '10:00 AM' }
+    { sender: 'merchant', text: 'Choum Reab Suor! Welcome to Bayon Store. Tap "Buy via Telegram" or "Buy via Messenger" to order directly!', time: '10:00 AM' }
 ];
 
 let products = [
