@@ -512,7 +512,7 @@ function orderViaTelegram(productId = null, isCart = false) {
         message = `👋 Hello ${storeInfo.name}!\n\nI want to buy:\n📦 *${p.title}*\n💰 *Price:* $${p.priceUSD.toFixed(2)} (${Math.round(p.priceUSD * KHR_RATE).toLocaleString()} ៛)\n\nPlease check stock and delivery details for Phnom Penh / Provinces. Orkun!`;
     }
 
-    const telegramUrl = `https:///${storeInfo.telegramUser}?text=${encodeURIComponent(message)}`;
+    const telegramUrl = `https:///${storeInfo.telegramUser}`;
     window.open(telegramUrl, '_blank');
     showToast('📱 Opening Telegram Chat with Seller...');
 }
