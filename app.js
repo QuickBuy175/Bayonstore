@@ -197,7 +197,7 @@ let products = [
         category: 'Cambodian Local',
         priceUSD: 0.50,
         image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/380ml.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
-        description: 'World-renowned GI certified Kampot Organic Pepper harvested from farms in Kampot, Cambodia. Rich aroma and exquisite spiciness.',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 380 ml / ផលិតផលខ្មែរ',
         rating: 4.9
     },
     {
