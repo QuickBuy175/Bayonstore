@@ -238,11 +238,11 @@ let products = [
     },
     {
         id: 'p6',
-        title: 'Mondulkiri Roasted Whole Coffee Beans (500g)',
+        title: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប (500ml)',
         category: 'Cambodian Local',
-        priceUSD: 9.80,
-        image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80',
-        description: 'Rich, aromatic organic Robusta and Arabica coffee blend grown in the highland soil of Mondulkiri province.',
+        priceUSD: 3.00,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Body%20wash%20Rose.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប ចំណុះ 500 ml/កំចាត់មេរោគ ផ្សំពីវីតាមីន E ជួយអោយស្បែកស្អាត ម៉ត់រលោង.',
         rating: 4.9
     },
     {
