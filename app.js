@@ -509,7 +509,7 @@ function orderViaTelegram(productId = null, isCart = false) {
     } else {
         const p = products.find(item => item.id === productId);
         if (!p) return;
-        message = `👋 Hello ${storeInfo.name}!\n\nI want to buy:\n📦 *${p.title}*\n💰 *Price:* $${p.priceUSD.toFixed(2)} (${Math.round(p.priceUSD * KHR_RATE).toLocaleString()} ៛)\n\nPlease check stock and delivery details for Phnom Penh / Provinces. Orkun!`;
+        message = `👋 Hello ${storeInfo.name}!\n\nI want to buy:\n📦 *${p.title}*\n💰 *Price:* $${p.priceUSD.toFixed(2)} (${Math.round(p.priceUSD * KHR_RATE).toLocaleString()} ៛)\n\nPlease check and fill Phone Number and Address. Orkun!`;
     }
 
     const telegramUrl = `https:///${storeInfo.telegramUser}`;
