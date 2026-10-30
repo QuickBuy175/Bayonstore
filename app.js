@@ -541,7 +541,7 @@ function orderViaMessenger(productId = null, isCart = false) {
     } else {
         const p = products.find(item => item.id === productId);
         if (!p) return;
-        message = `សួស្តី! ខ្ញុំទិញ "${p.title}" for $${p.priceUSD.toFixed(2)}. ទិញចំនួន`;
+        message = `សួស្តី! ខ្ញុំទិញ "${p.title}" for $${p.priceUSD.toFixed(2)}. ទិញចំនួន     លេខទូរស័ព្ទ​​   `;
     }
 
     try {
