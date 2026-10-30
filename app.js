@@ -496,7 +496,7 @@ function orderViaTelegram(productId = null, isCart = false) {
         const province = document.getElementById('ship-province')?.value || "Phnom Penh";
         const address = document.getElementById('ship-address')?.value.trim() || "Phnom Penh";
         let subtotal = cart.reduce((acc, item) => acc + (item.priceUSD * item.qty), 0);
-        let totalUSD = subtotal + 1.50;
+        let totalUSD = subtotal + 1.00;
 
         message = `🛒 *NEW ORDER FROM ${storeInfo.name.toUpperCase()}*\n\n` +
                   `👤 *Customer:* ${name}\n` +
