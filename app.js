@@ -555,7 +555,7 @@ function orderViaMessenger(productId = null, isCart = false) {
     } catch (err) {}
 
     setTimeout(() => {
-        window.open(`https://m.me/${storeInfo.messengerUser}`, '_blank');
+        window.open(`https://m.me/${storeInfo.messengerUser}?text=${encodeURIComponent(message)}`, '_blank');
     }, 500);
 }
 
