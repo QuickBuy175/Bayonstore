@@ -29,7 +29,7 @@ let categories = [
     { id: 'cat-all', name: 'All', icon: '🛍️', labelKh: 'ទំនិញទាំងអស់' },
     { id: 'cat-local', name: 'Cambodian Local', icon: '🇰🇭', labelKh: 'ផលិតផលក្នុងស្រុក' },
     { id: 'cat-elec', name: 'Electronics', icon: '📱', labelKh: 'អេឡិចត្រូនិក' },
-    { id: 'cat-fash', name: 'Fashion', icon: '👕', labelKh: 'សម្លៀកបំពាក់' },
+    { id: 'cat-fash', name: 'Home & Living', icon: '👕', labelKh: 'ផ្ទះ និងការរស់នៅ' },
     { id: 'cat-beauty', name: 'Beauty & Health', icon: '✨', labelKh: 'សម្រស់ និងសុខភាព' }
 ];
 
