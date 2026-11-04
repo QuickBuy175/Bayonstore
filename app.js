@@ -6,7 +6,7 @@ let storeInfo = {
     name: 'BayonStore',
     tagline: "Cambodia's Trusted Marketplace",
     announcement: 'Fast Express Shipping across Phnom Penh & all Cambodian Provinces!',
-    heroTitle: 'Shop Local & Global Tech Products',
+    heroTitle: 'LOKA ផលិតផលប្រទេសកម្ពុជា',
     heroDesc: 'Pay seamlessly with ABA PAY, Bakong KHQR, Wing, ACLEDA, or order directly via Telegram and Messenger!',
     telegramUser: 't.me/loka175',
     messengerUser: '372617426271838',
