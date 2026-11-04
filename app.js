@@ -27,6 +27,7 @@ let searchQuery = '';
 // Dynamic Product Categories List (Admin Managed)
 let categories = [
     { id: 'cat-all', name: 'All', icon: '🛍️', labelKh: 'ទំនិញទាំងអស់' },
+    { id: 'cat-all', name: 'Promotions', icon: '✨✨', labelKh: 'ប្រមូសិនពិសេស' },
     { id: 'cat-local', name: 'Cambodian Local', icon: '🇰🇭', labelKh: 'ផលិតផលក្នុងស្រុក' },
     { id: 'cat-elec', name: 'Electronics', icon: '📱', labelKh: 'អេឡិចត្រូនិក' },
     { id: 'cat-fash', name: 'Home & Living', icon: '👕', labelKh: 'ផ្ទះ និងការរស់នៅ' },
