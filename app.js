@@ -269,7 +269,7 @@ let products = [
         title: 'ក្បាលអនាម័យ (អ៊ីណុក 304)',
         category: 'Home & Living',
         priceUSD: 3.00,
-        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Body%20wash%20Rose.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/images2/Clean%20Head.png?raw=true?auto=format&fit=crop&w=600&q=80',
         description: 'ក្បាលអនាម័យ (អ៊ីណុក) គុណភាពល្អ ងាយស្រួលប្រើ , ទិញ 2 ដឹកជញ្ជូនឥតគិតថ្លៃ',
         rating: 4.0
     },
