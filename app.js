@@ -275,15 +275,6 @@ let products = [
         rating: 4.0
     },
   {
-        id: 'p9',
-        title: 'សាប៊ូលាងចាន LOKA (3500 ml) ទិញ 1 ថែម 1',
-        category: 'Promotions',
-        priceUSD: 3.50,
-        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/3500-1+1.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
-        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 3500 ml ទិញ 1 ថែម 1/ ផលិតផលខ្មែរ​ $9.0/កេស/3 ដប',
-        rating: 4.7
-    },    
-  {
         id: 'p99',
         title: 'Demo',
         category: 'Fashionsss',
