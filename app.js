@@ -1048,7 +1048,7 @@ function handleAuthSubmit(e) {
     const inputPass = document.getElementById('auth-password').value;
 
     const isUserValid = (inputUser.toLowerCase() === 'admin' || inputUser.toLowerCase() === 'prasith1980@gmail.com');
-    const isPassValid = (inputPass === ownerAccount.);
+    const isPassValid = (inputPass === ownerAccount.password);
 
     if (isUserValid && isPassValid) {
         currentUser = ownerAccount;
