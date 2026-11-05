@@ -274,7 +274,7 @@ let products = [
         description: 'ក្បាលអនាម័យ (អ៊ីណុក) គុណភាពល្អ ងាយស្រួលប្រើ , ទិញ 2 ដឹកជញ្ជូនឥតគិតថ្លៃ',
         rating: 4.0
     },
-      {
+  {
         id: 'p9',
         title: 'សាប៊ូលាងចាន LOKA (3500 ml) ទិញ 1 ថែម 1',
         category: 'Promotions',
