@@ -1067,7 +1067,7 @@ function handleLogout() {
     if (!document.getElementById('auth-modal').classList.contains('hidden')) {
         toggleAuthModal();
     }
-    showToast('🚪 Logged out from Admin Portal');
+    showToast('🚪 ');
 }
 
 function applyUserRoleState() {
