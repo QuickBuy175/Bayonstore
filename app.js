@@ -193,7 +193,7 @@ let chatHistory = [
 
 let products = [
     {
-        id: 'p1',
+        id: 'p11',
         title: 'សាប៊ូលាងចាន LOKA (380 ml)',
         category: 'Cambodian Local',
         priceUSD: 0.50,
@@ -202,7 +202,7 @@ let products = [
         rating: 4.9
     },
       {
-        id: 'p2',
+        id: 'p12',
         title: 'សាប៊ូលាងចាន LOKA (730 ml)',
         category: 'Cambodian Local',
         priceUSD: 1.00,
@@ -211,7 +211,7 @@ let products = [
         rating: 4.9
     },
     {
-        id: 'p10',
+        id: 'p13',
         title: 'សាប៊ូលាងចាន LOKA (3500 ml)',
         category: 'Cambodian Local',
         priceUSD: 3.50,
@@ -220,7 +220,7 @@ let products = [
         rating: 4.7
     },
      {
-        id: 'p3',
+        id: 'p14',
         title: 'សាប៊ូលាងចាន LOKA (10 L)',
         category: 'Cambodian Local',
         priceUSD: 8.75,
@@ -229,7 +229,7 @@ let products = [
         rating: 4.5
     },
     {
-        id: 'p4',
+        id: 'p15',
         title: 'សាប៊ូលាងចាន LOKA (20 L)',
         category: 'Cambodian Local',
         priceUSD: 12.50,
@@ -238,7 +238,7 @@ let products = [
         rating: 4.5
     },
     {
-        id: 'p5',
+        id: 'p16',
         title: 'សាប៊ូបោកគក់ LOKA ក្លិនឈើរី (3500 ml)',
         category: 'Cambodian Local',
         priceUSD: 5.50,
@@ -247,7 +247,7 @@ let products = [
         rating: 4.8
     },
      {
-        id: 'p6',
+        id: 'p17',
         title: 'សាប៊ូបោកគក់ LOKA ក្លិនឡាវេនដ័រ (3500 ml)',
         category: 'Cambodian Local',
         priceUSD: 5.50,
@@ -256,7 +256,7 @@ let products = [
         rating: 4.8
     },  
   {
-        id: 'p7',
+        id: 'p18',
         title: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប (500ml)',
         category: 'Cambodian Local',
         priceUSD: 3.00,
@@ -265,7 +265,7 @@ let products = [
         rating: 4.9
     },
   {
-        id: 'p8',
+        id: 'p200',
         title: 'ក្បាលអនាម័យ (អ៊ីណុក 304)',
         category: 'Home & Living',
         priceUSD: 3.00,
@@ -274,7 +274,7 @@ let products = [
         rating: 4.0
     },
     {
-        id: 'p11',
+        id: 'p1',
         title: 'សាប៊ូលាងចាន LOKA (3500 ml) ទិញ 1 ថែម 1',
         category: 'Promotions',
         priceUSD: 3.50,
@@ -283,7 +283,7 @@ let products = [
         rating: 4.7
     },
   {
-        id: 'p99',
+        id: 'p999',
         title: 'Demo',
         category: 'Fashionsss',
         priceUSD: 18.00,
