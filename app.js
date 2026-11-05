@@ -277,7 +277,7 @@ let products = [
         id: 'p99',
         title: 'Demo',
         category: 'Fashionsss',
-        priceUSD: 00.00,
+        priceUSD: 18.00,
         image: 'https://1images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80',
         description: 'Breathable lightweight linen shirt designed for tropical Cambodian climate. Available in M, L, XL sizes.',
         rating: 4.5
