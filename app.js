@@ -275,7 +275,7 @@ let products = [
         rating: 4.0
     },
       {
-        id: 'p11',
+        id: 'p9',
         title: 'សាប៊ូលាងចាន LOKA (3500 ml) ទិញ 1 ថែម 1',
         category: 'Promotions',
         priceUSD: 3.50,
