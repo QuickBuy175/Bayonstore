@@ -254,8 +254,7 @@ let products = [
         image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Laundry%20lavendor.png?raw=true?auto=format&fit=crop&w=600&q=80',
         description: 'សាប៊ូបោកគក់ LOKA ក្លិនឡាវេនដ័រ ចំណុះ 3500 ml / ផលិតផលខ្មែរ​ ',
         rating: 4.8
-    },
-  
+    },  
   {
         id: 'p7',
         title: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប (500ml)',
