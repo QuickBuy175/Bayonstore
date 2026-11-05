@@ -274,12 +274,20 @@ let products = [
         description: 'ក្បាលអនាម័យ (អ៊ីណុក) គុណភាពល្អ ងាយស្រួលប្រើ , ទិញ 2 ដឹកជញ្ជូនឥតគិតថ្លៃ',
         rating: 4.0
     },
-    
+      {
+        id: 'p11',
+        title: 'សាប៊ូលាងចាន LOKA (3500 ml) ទិញ 1 ថែម 1',
+        category: 'Promotions',
+        priceUSD: 3.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/3500-1+1.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 3500 ml ទិញ 1 ថែម 1/ ផលិតផលខ្មែរ​ $9.0/កេស/3 ដប',
+        rating: 4.7
+    },    
   {
         id: 'p99',
         title: 'Demo',
         category: 'Fashionsss',
-        priceUSD: 18.00,
+        priceUSD: 00.00,
         image: 'https://1images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80',
         description: 'Breathable lightweight linen shirt designed for tropical Cambodian climate. Available in M, L, XL sizes.',
         rating: 4.5
