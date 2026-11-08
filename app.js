@@ -13,7 +13,7 @@ let storeInfo = {
     merchantName: 'BAYON EXPRESS ONLINE STORE',
     abaAccount: '000 648 592',
     wingAccount: '069 456 175',
-    acledaAccount: '០០០០'
+    acledaAccount: '123456789'
 };
 
 // App State
