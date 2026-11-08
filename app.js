@@ -206,7 +206,7 @@ let products = [
         title: 'សាប៊ូលាងចាន LOKA (380 ml)',
         category: 'Cambodian Local',
         priceUSD: 0.50,
-        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/380ml.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/380-1.jpg?raw=true?auto=format&fit=crop&w=600&q=80',
         description: 'សាប៊ូលាងចាន LOKA ចំណុះ 380 ml / ផលិតផលខ្មែរ​ $10.50/កេស/24 ដប',
         rating: 4.9
     },
