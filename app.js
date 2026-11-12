@@ -273,6 +273,15 @@ let products = [
         description: 'សាប៊ូដុសខ្លួន ក្លិនផ្កាកូលាប ចំណុះ 500 ml/កំចាត់មេរោគ ផ្សំពីវីតាមីន E ជួយអោយស្បែកស្អាត ម៉ត់រលោង.',
         rating: 4.9
     },
+    {
+        id: 'p100',
+        title: 'ម៉ូទ័រឆាប',
+        category: 'Electronics',
+        priceUSD: 12.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Electricity/Motor1.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'ម៉ូទ័រឆាប , ភ្លើង 220 V ',
+        rating: 4.0
+    },
   {
         id: 'p200',
         title: 'ក្បាលអនាម័យ (អ៊ីណុក 304)',
