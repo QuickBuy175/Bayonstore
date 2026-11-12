@@ -282,6 +282,15 @@ let products = [
         description: 'ម៉ូទ័រឆាប , ភ្លើង 220 V ',
         rating: 4.0
     },
+     {
+        id: 'p101',
+        title: 'ដុំភ្លើង ',
+        category: 'Electronics',
+        priceUSD: 5.50,
+        image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Electricity/Adaptor1.png?raw=true?auto=format&fit=crop&w=600&q=80',
+        description: 'ដុំភ្លើង ភ្លើងចូល (100-240V) , ភ្លើងចេញ​(DC3-24V5A) ',
+        rating: 4.0
+    },
   {
         id: 'p200',
         title: 'ក្បាលអនាម័យ (អ៊ីណុក 304)',
