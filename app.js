@@ -241,9 +241,9 @@ let products = [
         id: 'p15',
         title: 'សាប៊ូលាងចាន LOKA (20 L)',
         category: 'Cambodian Local',
-        priceUSD: 12.50,
+        priceUSD: 11.25,
         image: 'https://github.com/QuickBuy175/Bayonstore/blob/main/images/Dish%20washing%2020L.png?raw=true?auto=format&fit=crop&w=600&q=80',
-        description: 'សាប៊ូលាងចាន LOKA ចំណុះ 20 L / ផលិតផលខ្មែរ​ ',
+        description: 'សាកសមជាមមួយអាជីវកម្ម​ ,សាប៊ូលាងចាន LOKA ចំណុះ 20 L / ផលិតផលខ្មែរ​ ',
         rating: 4.5
     },
     {
